@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Login</title>
+</head>
+<body>
+<form th:method="POST" th:action="@{/login}" enctype="utf-8">
+  <div th:if="error != null">
+    <span th:text="${error}"></span>
+  </div>
+
+  <div>
+    <label for="firstname" th:text="#{firstName}">Email: </label>
+    <input type="text" id="firstname" name="username">
+  </div>
+
+  <div>
+    <label for="password" th:text="#{password}">Password: </label>
+    <input type="password" id="password" name="password">
+  </div>
+
+  <input type="submit" name="submit" th:value="#{submit}">submit</input>
+</form>
+<a th:href="@{/registration}">Sign Up</a>
+</body>
+</html>
